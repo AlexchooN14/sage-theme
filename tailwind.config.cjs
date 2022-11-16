@@ -12,10 +12,15 @@ module.exports = {
           500: '#d39a7d',
         },
         'buy-button': '#3e8dfc',
+        'newsletter-pink': '#ffc0cb',
+        'newsletter-border': '#ffa4a5',
       }, // Extend Tailwind's default colors
       spacing: {
         'dropdown-nav': '3.15rem',
       }, // Extend Tailwind's default spacing
+      padding: {
+        '15': '60px',
+      },
       width: {
         '1/7': '14%',
         '6/7': '86%',

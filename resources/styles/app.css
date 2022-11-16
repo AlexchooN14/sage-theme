@@ -24,6 +24,36 @@
     border-radius: 10px;
 }
 
+
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    color: inherit;    
+}
+
+.hover-underline-animation:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;    
+    bottom: 0;
+    left: 0;
+    background-color: currentColor;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+#nav:hover li:not(:hover){
+    opacity: 0.5;
+}
+
+
 div[name="quantity-input"] input[name="quantity"] {  
     -webkit-appearance: textfield;
     -moz-appearance: textfield;
@@ -54,4 +84,9 @@ ul.pink-bullets > li {
     position: relative;
     color: #374151;
     margin-bottom: 10px;
+}
+
+#newsletter_input::placeholder {
+    color: #ffa4a5;
+    opacity: 1;
 }

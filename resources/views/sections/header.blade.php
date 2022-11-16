@@ -10,37 +10,6 @@
   @endif
 </header> --}}
 
-<style>
-  .hover-underline-animation {
-    display: inline-block;
-    position: relative;
-    color: inherit;    
-  }
-  
-  .hover-underline-animation:after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 1px;    
-    bottom: 0;
-    left: 0;
-    background-color: currentColor;
-    transform-origin: bottom right;
-    transition: transform 0.25s ease-out;
-  }
-  
-  .hover-underline-animation:hover:after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-  }
-</style>
-
-@php
-  $custom_logo_id = get_theme_mod( 'custom_logo' );
-  $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
-@endphp
-
 <div class="">
   <div class="bg-gradient-to-r from-red-100 to-red-300 text-center py-2 text-xs ">
     @include('sections.sidebar-nav-ad')
@@ -48,18 +17,13 @@
   <div class="border-b border-solid border-gray-100 py-5 bg-white">
     <div class="flex flex-row justify-center items-center">
 
-      <div>
-        <a href="{{ home_url('/') }}" class="flex flex-none items-center">
+      <div class="flex flex-none items-center">
+        <a href="{{ home_url('/') }}">
           @if(has_custom_logo())
             <img src="{{ esc_url( $logo[0] ) }}" class="mr-3 h-6 sm:h-9" alt="{!! $siteName !!}">        
           @endif
         </a>
-      </div>
-      <style>
-        #nav:hover li:not(:hover){
-          opacity: 0.5;
-        }      
-      </style>
+      </div>      
       <div class="flex-initial">
         {{-- middle container --}}
         <ul id="nav" class=" text-sm flex flex-row items-center p-2 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white">

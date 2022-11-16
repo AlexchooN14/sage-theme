@@ -24,6 +24,7 @@ class App extends Composer
     {
         return [
             'siteName' => $this->siteName(),
+            'logo' => $this->getLogoUrl(),
         ];
     }
 
@@ -35,5 +36,8 @@ class App extends Composer
     public function siteName()
     {
         return get_bloginfo('name', 'display');
+    }
+    public function getLogoUrl() {
+        return wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ) , 'full' ); 
     }
 }

@@ -1148,6 +1148,16 @@
           "name": "Buy-button",
           "slug": "buy-button",
           "color": "#3e8dfc"
+        },
+        {
+          "name": "Newsletter-pink",
+          "slug": "newsletter-pink",
+          "color": "#ffc0cb"
+        },
+        {
+          "name": "Newsletter-border",
+          "slug": "newsletter-border",
+          "color": "#ffa4a5"
         }
       ]
     },

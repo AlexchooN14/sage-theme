@@ -13,5 +13,5 @@
       @yield('sidebar')
     </aside>
   @endif
-
+@include('sections.newsletter')
 @include('sections.footer')

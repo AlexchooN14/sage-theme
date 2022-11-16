@@ -16,21 +16,32 @@
   <div class="flex flex-row justify-center items-start">
     {{-- Product content is one row --}}
     <div style="min-width: calc(50% + 40px);" class="flex flex-row mr-4 min-h-[200vh] ">
+
+      {{--  --}}
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+      <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+      {{--  --}}
+
       {{-- Product visuals --}}
       @if($gallery)
         @php($counter = 0)
-        <div class="flex flex-col w-1/2">
-          {{-- Gallery --}}
-          @foreach($gallery as $gallery_image_id)
-            @if($counter == 0)
-              @php($image = wp_get_attachment_image_url($gallery_image_id, 'full'))
-              @php($counter++)
-            @endif                      
-            <img src="{!! wp_get_attachment_image_url($gallery_image_id, 'full') !!}">                    
-          @endforeach
+        {{-- Gallery --}}
+        <div class="flex flex-col w-1/2">          
+          <ul id="thumbnails" class="thumbnails">
+            @foreach($gallery as $gallery_image_id)
+              @if($counter == 0)
+                @php($image = wp_get_attachment_image_url($gallery_image_id, 'full'))
+                @php($counter++)
+              @endif           
+              <li class="thumbnail">
+                <img src="{!! wp_get_attachment_image_url($gallery_image_id, 'full') !!}" alt="">
+              </li>
+            @endforeach
+          </ul>
         </div>
         
-        <div class="flex flex-col w-auto">
+        {{-- Thumbnail Section --}}
+        <div class="flex flex-col w-auto">                    
           @if($is_package_price)
             <div class="my-1 flex justify-end">
               <span class="bg-transparent text-xs font-semibold text-rose-500 py-2 px-4 border border-rose-500 rounded-full">
@@ -38,11 +49,20 @@
               </span>
             </div>
           @endif
-          {{-- thumbnail --}}
-          @if($image)
-            <img src="{!! $image !!}">
-          @endif
+          <section id="main-carousel" class="splide" aria-label="My Awesome Gallery">
+            <div class="splide__track">
+              <ul class="splide__list">
+                @foreach($gallery as $gallery_image_id)          
+                  <li class="splide__slide">
+                    {{-- Thumbnail Photo --}}
+                    <img src="{!! wp_get_attachment_image_url($gallery_image_id, 'full') !!}" alt="">
+                  </li>               
+                @endforeach
+              </ul>
+            </div>
+          </section>                 
         </div>
+        
       @endif
     </div>
 
@@ -72,7 +92,7 @@
           </div>          
         </div>  
 
-        <button class="w-6/7 bg-buy-button align-center justify-center transition ease-in-out delay-50 hover:scale-110 duration-300">
+        <button class="w-6/7 bg-buy-button items-center justify-center transition ease-in-out delay-50 hover:scale-110 duration-300">
           <p class="text-white">Купи</p>
         </button>        
       </div>
