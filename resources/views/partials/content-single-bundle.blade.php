@@ -39,6 +39,14 @@
             @endforeach
           </ul>
         </div>
+        <script>          
+          document.addEventListener("DOMContentLoaded", () => {
+            var thumbnails = document.getElementsByClassName('thumbnail');
+            for (var i = 0; i < thumbnails.length; i++) {
+                initThumbnail(thumbnails[i], i);  // Does not work
+            }
+          });
+        </script>
         
         {{-- Thumbnail Section --}}
         <div class="flex flex-col w-auto">                    
@@ -62,7 +70,11 @@
             </div>
           </section>                 
         </div>
-        
+        <script>  // does not work
+          document.addEventListener("DOMContentLoaded", () => {
+            createSplide();            
+          });          
+        </script>
       @endif
     </div>
 

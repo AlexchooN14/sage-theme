@@ -1,7 +1,7 @@
 @font-face {
     font-family: "Casper Regular";
     src: local("Casper Regular"),
-    url(../fonts/Casper\ Regular.ttf) format("truetype");
+    url('../fonts/CasperRegular.ttf') format("truetype");
     font-weight: normal;
     font-style: normal;
 }

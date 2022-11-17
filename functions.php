@@ -115,4 +115,3 @@ function biotrade_wp_admin_login_logo_title( $headertext ) {
     return $headertext;
 }
 add_filter( 'login_headertext', 'biotrade_wp_admin_login_logo_title' );
- 
