@@ -2,7 +2,7 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 @import 'fonts.css';
-
+@import '@splidejs/splide/dist/css/splide.min.css';
 
 * {
     font-family: "Casper Regular", sans-serif;

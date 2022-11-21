@@ -15,12 +15,12 @@
 
   <div class="flex flex-row justify-center items-start">
     {{-- Product content is one row --}}
-    <div style="min-width: calc(50% + 40px);" class="flex flex-row mr-4 min-h-[200vh] ">
+    <div id="leftColumn" style="min-width: calc(50% + 40px); position: sticky; top: 111px;" class="flex flex-row mr-4">
 
       {{--  --}}
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
       <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
-      {{--  --}}
+      {{--  --}}      
 
       {{-- Product visuals --}}
       @if($gallery)
@@ -46,7 +46,6 @@
             <x-promo-banner text="ПАКЕТНА ЦЕНА" type="package-price"/>
           @endif
 
-
           <section id="main-carousel" class="splide" aria-label="My Awesome Gallery">
             <div class="splide__track">
               <ul class="splide__list">
@@ -67,7 +66,6 @@
                 initThumbnail(thumbnails[i], i);
             }        
           </script>
-
         </div>
       @endif
     </div>

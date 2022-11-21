@@ -1,4 +1,6 @@
 // The function to initialize each thumbnail.
+
+// import Splide from '@splidejs/splide';
 var splide;
 function initThumbnail(thumbnail, index) {
     thumbnail.addEventListener('click', function () {
@@ -13,3 +15,4 @@ function createSplide() {
     });
     splide.mount();
 }
+

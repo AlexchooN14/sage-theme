@@ -14,6 +14,7 @@ export default async (app) => {
     .entry({
       app: ["@scripts/app", "@styles/app"],
       editor: ["@scripts/editor", "@styles/editor"],
+      // custom_js: ["@scripts/splide_gallery", "@scripts/newsletter"]
     })
 
     /**

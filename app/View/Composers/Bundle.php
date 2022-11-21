@@ -23,7 +23,6 @@ class Bundle extends Composer
     public function override()
     {
         return [
-            // $this->importScripts(),
             'gallery' => $this->getGallery(),
             'is_package_price' => $this->isPackagePrice(),
             'bundle_price' => $this->getPrice(),
@@ -76,13 +75,4 @@ class Bundle extends Composer
     public function getBadIngredients() {
         return get_field('bad_ingredents');
     }
-    // 
-    // public function importScripts() {
-    //     $asset = \Roots\asset('scripts/newsletter.js');
-    //     $asset2 = \Roots\asset('scripts/splide_gallery.js');
-    //     // var_dump($asset->uri());
-    //     // var_dump($asset2->uri());
-    //     add_action( 'wp_head', $asset->contents() );
-    //     add_action( 'wp_head', $asset2->uri());
-    // }
 }

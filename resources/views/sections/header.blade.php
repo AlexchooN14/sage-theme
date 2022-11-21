@@ -9,7 +9,7 @@
 </header> --}}
 
 
-<div class="">
+<div class="sticky top-0">
   @include('sections.sidebar-nav-ad')
   <div class="border-b border-solid border-gray-100 py-5 bg-white">
     <div class="flex flex-row justify-center items-center">
