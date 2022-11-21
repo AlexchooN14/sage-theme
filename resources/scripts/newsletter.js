@@ -1,9 +1,24 @@
+function disableButton() {
+    var button = document.getElementById('newsletter-button');
+    button.disabled = true;
+    button.className = "";
+    button.className = 'bg-blue-300 w-1/4 items-center justify-center';
+}
+
+function enableButton() {
+    var button = document.getElementById('newsletter-button');
+    button.disabled = false;
+    button.className = "";
+    button.className = "bg-buy-button w-1/4 items-center ease-in-out delay-50 hover:scale-110 duration-300 justify-center";
+}
+
 function getUserAgreement() {
     var userAgreement = document.getElementById("userAgreement");
     var inputText = document.getElementById('newsletter_input').value.trim();  
     if (inputText.length != 0 && userAgreement.childElementCount != 0) return;        
     else if (inputText.length === 0) {
-        if (userAgreement.childElementCount != 0) {         
+        if (userAgreement.childElementCount != 0) {
+            disableButton();
             document.getElementById('userAgreementCheckbox').remove();                
         }
         return;
@@ -32,14 +47,8 @@ function checkedUserAgreement() {
     var checkbox = document.getElementById('agreement-checkbox');
     var button = document.getElementById('newsletter-button');
     if (checkbox.checked == true) {
-        console.log('here');
-        button.disabled = false;
-        button.className = "";
-        button.className = "bg-buy-button w-1/4 items-center ease-in-out delay-50 hover:scale-110 duration-300 justify-center";
+        enableButton();
     } else {
-        console.log('there');
-        button.disabled = true;
-        button.className = "";
-        button.className = 'bg-blue-300 w-1/4 items-center justify-center';
+        disableButton();
     }
 }
