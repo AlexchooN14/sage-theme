@@ -54,7 +54,7 @@ try {
 |
 */
 
-collect(['setup', 'filters'])
+collect(['setup', 'filters', 'custom-scripts'])
     ->each(function ($file) {
         if (! locate_template($file = "app/{$file}.php", true, true)) {
             wp_die(
@@ -115,3 +115,82 @@ function biotrade_wp_admin_login_logo_title( $headertext ) {
     return $headertext;
 }
 add_filter( 'login_headertext', 'biotrade_wp_admin_login_logo_title' );
+
+function page_tagcat_settings() {
+// Add tag metabox to page
+    register_taxonomy_for_object_type('post_tag', 'page');
+    register_taxonomy_for_object_type('category', 'page');
+}
+add_action( 'init', 'page_tagcat_settings' );
+
+remove_filter( 'the_title', 'wptexturize' );
+
+
+function biotrade_custom_javascript() {
+    ?>
+        <script>
+          var splide;
+
+          function getUserAgreement() {
+            var userAgreement = document.getElementById("userAgreement");
+            var inputText = document.getElementById('newsletter_input').value.trim();  
+            if (inputText.length != 0 && userAgreement.childElementCount != 0) return;        
+            else if (inputText.length === 0) {
+                if (userAgreement.childElementCount != 0) {         
+                    document.getElementById('userAgreementCheckbox').remove();                
+                }
+                return;
+            }    
+            var checkbox = document.createElement("div");
+            checkbox.id = 'userAgreementCheckbox';
+            checkbox.classList.add('flex', 'items-center');
+
+            var input = document.createElement('input');
+            input.className = "w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 focus:ring-2";
+            input.type = "checkbox";
+            input.id = "agreement-checkbox";
+            input.setAttribute('onclick', 'checkedUserAgreement()');
+
+            var label = document.createElement('label');
+            label.for = "agreement-checkbox";
+            label.className = "ml-2 text-sm font-medium text-gray-900";
+            label.innerHTML = "Съгласявам се Biotrade да изпраща на имейла ми други информационни материали и маркетингови съобщения в съответствие с Политиката за поверителност";
+
+            checkbox.appendChild(input);
+            checkbox.appendChild(label);
+            userAgreement.appendChild(checkbox);
+        }
+
+        function checkedUserAgreement() {
+            var checkbox = document.getElementById('agreement-checkbox');
+            var button = document.getElementById('newsletter-button');
+            if (checkbox.checked == true) {
+                console.log('here');
+                button.disabled = false;
+                button.className = "";
+                button.className = "bg-buy-button w-1/4 items-center ease-in-out delay-50 hover:scale-110 duration-300 justify-center";
+            } else {
+                console.log('there');
+                button.disabled = true;
+                button.className = "";
+                button.className = 'bg-blue-300 w-1/4 items-center justify-center';
+            }
+        }        
+
+        function createSplide() {
+            splide = new Splide('#main-carousel', {
+                pagination: false,
+                arrows : false,
+            });
+            splide.mount();
+        }
+
+        function initThumbnail(thumbnail, index) {
+            thumbnail.addEventListener('click', function () {
+                splide.go(index);
+            });
+        }
+        </script>
+    <?php
+}
+add_action('wp_head', 'biotrade_custom_javascript');

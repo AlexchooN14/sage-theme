@@ -1,4 +1,5 @@
 // The function to initialize each thumbnail.
+var splide;
 function initThumbnail(thumbnail, index) {
     thumbnail.addEventListener('click', function () {
         splide.go(index);
@@ -6,7 +7,7 @@ function initThumbnail(thumbnail, index) {
 }
 
 function createSplide() {
-    var splide = new Splide('#main-carousel', {
+    splide = new Splide('#main-carousel', {
         pagination: false,
         arrows : false,
     });

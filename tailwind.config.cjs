@@ -14,12 +14,14 @@ module.exports = {
         'buy-button': '#3e8dfc',
         'newsletter-pink': '#ffc0cb',
         'newsletter-border': '#ffa4a5',
+        'theme-pink': '#fccdce',
       }, // Extend Tailwind's default colors
       spacing: {
         'dropdown-nav': '3.15rem',
       }, // Extend Tailwind's default spacing
       padding: {
         '15': '60px',
+        '18': '70px',
       },
       width: {
         '1/7': '14%',

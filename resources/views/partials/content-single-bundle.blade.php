@@ -38,25 +38,15 @@
               </li>
             @endforeach
           </ul>
-        </div>
-        <script>          
-          document.addEventListener("DOMContentLoaded", () => {
-            var thumbnails = document.getElementsByClassName('thumbnail');
-            for (var i = 0; i < thumbnails.length; i++) {
-                initThumbnail(thumbnails[i], i);  // Does not work
-            }
-          });
-        </script>
+        </div>               
         
         {{-- Thumbnail Section --}}
         <div class="flex flex-col w-auto">                    
           @if($is_package_price)
-            <div class="my-1 flex justify-end">
-              <span class="bg-transparent text-xs font-semibold text-rose-500 py-2 px-4 border border-rose-500 rounded-full">
-                ПАКЕТНА ЦЕНА
-              </span>
-            </div>
+            <x-promo-banner text="ПАКЕТНА ЦЕНА" type="package-price"/>
           @endif
+
+
           <section id="main-carousel" class="splide" aria-label="My Awesome Gallery">
             <div class="splide__track">
               <ul class="splide__list">
@@ -68,13 +58,17 @@
                 @endforeach
               </ul>
             </div>
-          </section>                 
+          </section>          
+
+          <script>
+            createSplide();
+            var thumbnails = document.getElementsByClassName('thumbnail');
+            for (var i = 0; i < thumbnails.length; i++) {
+                initThumbnail(thumbnails[i], i);
+            }        
+          </script>
+
         </div>
-        <script>  // does not work
-          document.addEventListener("DOMContentLoaded", () => {
-            createSplide();            
-          });          
-        </script>
       @endif
     </div>
 
@@ -174,15 +168,9 @@
         <p class="text-xs mb-3 font-semibold">Не съдържа</p>
         <hr class="h-px border-gray-700">
       </div>
-
       <div class="flex flex-row w-full justify-between">
-        @foreach($bad_ingredients as $ingredient_id)
-          {{-- <span>{!! get_post($ingredient_id) !!}</span> --}}
-          
-          <div class="flex flex-row w-1/3  items-center">
-            <img class="w-1/3 h-auto mr-3" src="{!! get_the_post_thumbnail_url($ingredient_id) !!}">
-            <span class="text-xs">{!! get_the_title($ingredient_id) !!}</span>
-          </div>          
+        @foreach($bad_ingredients as $ingredient_id)          
+          <x-bad-ingredient :ingredientId="$ingredient_id"/>         
         @endforeach        
       </div>
 
@@ -195,12 +183,8 @@
     </div>
   </div>
 
-  <article @php(post_class())>
+  {{-- 
       <header>
-        <h1 class="entry-title">
-          {!! $title !!}
-        </h1>
-    
         @include('partials.entry-meta')
       </header>
     
@@ -213,8 +197,7 @@
       </footer>
     
       @php(comments_template())
-  </article>
-
+  </article> --}}
 
 </div>
   

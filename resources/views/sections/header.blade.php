@@ -1,7 +1,5 @@
 <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
 <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
-
-
 {{-- <header class="banner">
   @if (has_nav_menu('primary_navigation'))
     <nav class="nav-primary" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
@@ -10,51 +8,31 @@
   @endif
 </header> --}}
 
+
 <div class="">
-  <div class="bg-gradient-to-r from-red-100 to-red-300 text-center py-2 text-xs ">
-    @include('sections.sidebar-nav-ad')
-  </div>
+  @include('sections.sidebar-nav-ad')
   <div class="border-b border-solid border-gray-100 py-5 bg-white">
     <div class="flex flex-row justify-center items-center">
-
       <div class="flex flex-none items-center">
         <a href="{{ home_url('/') }}">
           @if(has_custom_logo())
             <img src="{{ esc_url( $logo[0] ) }}" class="mr-3 h-6 sm:h-9" alt="{!! $siteName !!}">        
           @endif
         </a>
-      </div>      
+      </div>
+
+
       <div class="flex-initial">
         {{-- middle container --}}
         <ul id="nav" class=" text-sm flex flex-row items-center p-2 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white">
-          <li class="relative mx-3 hover-underline-animation pb-0.5">
-            <a href="#" class=" block text-gray-700 rounded  md:border-0 md:p-0">ПРОДУКТИ</a>
-            {{-- <div class="group-hover:block dropdown-menu absolute top-dropdown-nav bg-slate-300 hidden"> --}}
-              {{-- Product Dropdown --}}
-              {{-- <p class="text-red-500">adsdadas</p> --}}
-            {{-- </div> --}}
-          </li>
-          <li class=" mx-3 hover-underline-animation pb-0.5">
-            <a href="#" class=" block text-gray-700 rounded  md:border-0 md:p-0 ">РЕШЕНИЕ</a>
-          </li>
-          <li class=" mx-3 hover-underline-animation pb-0.5">
-            <div class="flex flex-row items-center">   
-              <i class="fa-solid fa-crown pr-1 text-crown-500"></i>
-              <a href="#" class=" block text-gray-700 rounded  md:border-0 md:p-0 ">НАЙ - ПРОДАВАНИ</a>
-            </div> 
-          </li>
-          <li style="color: #ff6096" class=" mx-3 hover-underline-animation pb-0.5">
-            <div class="flex flex-row text-promo-500 items-center"> 
-              <i class="fa-solid fa-fire-flame-curved pr-1"></i>
-              <a href="#" class=" block rounded ">ПРОМО ПРОДУКТИ</a>
-            </div> 
-          </li>
-          <li class=" mx-3 hover-underline-animation pb-0.5">
-            <a href="#" class=" block text-gray-700 rounded  md:border-0 md:p-0 ">КОНТАКТИ</a>
-          </li>
-          <li class=" mx-3 hover-underline-animation pb-0.5">
-            <a href="#" class=" block text-gray-700 rounded  md:border-0 md:p-0 ">БЛОГ</a>
-          </li>      
+          
+          <x-navbar-part link="#" linkText="продукти" />
+          <x-navbar-part link="#" linkText="решение" />
+          <x-navbar-part link="#" linkText="най - продавани" iconType="crown" />
+          <x-navbar-part link="#" linkText="ПРОМО ПРОДУКТИ" class="!text-promo-500" iconType="flame" />
+          <x-navbar-part link="#" linkText="КОНТАКТИ"/>
+          <x-navbar-part link="#" linkText="БЛОГ"/>    
+
         </ul>
       </div>
 

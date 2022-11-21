@@ -7,8 +7,8 @@ library.add(faCrown, faFireFlameCurved, faMagnifyingGlass, faBagShopping, faPlus
 dom.watch();
 // import {initThumbnail, createSplide} from './splide_gallery';
 // import {getUserAgreement} from './newsletter';
-import './splide_gallery';
-import './newsletter';
+// import './splide_gallery';
+// import './newsletter';
 
 /**
  * app.main
