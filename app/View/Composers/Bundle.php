@@ -69,8 +69,11 @@ class Bundle extends Composer
         return strip_tags(get_field('additional_description'));
     }
     public function getVideoId() {
-        preg_match('/([a-zA-Z]+(\\d[a-zA-Z]+)+)/i', get_field('tutorial_link'), $matches);
-        return $matches[0];
+        if (get_field('tutorial_link')) {
+            preg_match('/([a-zA-Z]+(\\d[a-zA-Z]+)+)/i', get_field('tutorial_link'), $matches);
+            return $matches[0];
+        }
+        return null;
     }
     public function getBadIngredients() {
         return get_field('bad_ingredents');

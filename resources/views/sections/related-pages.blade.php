@@ -1,5 +1,5 @@
 <div class="mx-44 pb-18">
-    <hr class="my-24 bg-theme-pink border-none h-px">
+    <hr class="my-24 bg-theme-pink border-none h-[0.5px]">
 
     <div class="flex flex-col items-stretch justify-center m-auto w-3/4 text-center">
         <div class="">

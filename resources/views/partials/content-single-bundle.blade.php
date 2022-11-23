@@ -15,7 +15,7 @@
 
   <div class="flex flex-row justify-center items-start">
     {{-- Product content is one row --}}
-    <div id="leftColumn" style="min-width: calc(50% + 40px); position: sticky; top: 111px;" class="flex flex-row mr-4">
+    <div id="leftColumn" style="min-width: calc(50% + 40px); position: sticky; top: 145px;" class="flex flex-row mr-4">
 
       {{--  --}}
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
@@ -129,21 +129,23 @@
       
       <ul class="ml-4 pink-bullets mb-8">
         @foreach((array_reverse($related_products)) as $related_product_id)
-          <li class="text-[12px] tracking-wider	">{!! get_post_field('post_content', $related_product_id) !!}</li>
+          <li class="text-[12px] tracking-wider">{!! get_post_field('post_content', $related_product_id) !!}</li>
         @endforeach
       </ul>
 
       {{-- Действие --}}
-      <div class="mb-5">
-        <p class="text-xs mb-3 font-semibold">Действие</p>
-        <hr class="h-px border-gray-700">
-      </div>
-           
-      <ul class="ml-4 pink-bullets mb-8">
-        @foreach($helps_for_list as $helps_for)
-          <li class="text-[12px] tracking-wider	">{!! $helps_for['label'] !!}</li>
-        @endforeach
-      </ul>
+      @if($helps_for_list)
+        <div class="mb-5">
+          <p class="text-xs mb-3 font-semibold">Действие</p>
+          <hr class="h-px border-gray-700">
+        </div>
+            
+        <ul class="ml-4 pink-bullets mb-8">
+          @foreach($helps_for_list as $helps_for)
+            <li class="text-[12px] tracking-wider	">{!! $helps_for['label'] !!}</li>
+          @endforeach
+        </ul>
+      @endif
             
       {{-- Начин на употреба --}}
       <div class="mb-5">
@@ -157,9 +159,11 @@
       <p class="{!! $li_pink_classes !!} mt-10">
         {!! $additional_description !!}
       </p>
-      <div class="w-full">
-        <iframe class="mt-32 w-full h-80" src="https://www.youtube.com/embed/{!! $tutorial_id !!}" frameborder="0" allowfullscreen></iframe>
-      </div>
+      @if($tutorial_id)
+        <div class="w-full">
+          <iframe class="mt-32 w-full h-80" src="https://www.youtube.com/embed/{!! $tutorial_id !!}" frameborder="0" allowfullscreen></iframe>
+        </div>
+      @endif
       
       {{-- Не съдържа --}}
       <div class="mb-5 mt-10">
