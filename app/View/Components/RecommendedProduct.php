@@ -15,7 +15,19 @@ class RecommendedProduct extends Component
      * The recommended product image URL.
      * @var string
      */
-    public $image_url;    
+    public $image_url;
+
+    /**
+     * The recommended product image height in px.
+     * @var string
+     */
+    public $imageHeight;
+
+    /**
+     * The recommended product image width in px.
+     * @var string
+     */
+    public $imageWidth;
 
     /**
      * The recommended product title.
@@ -57,7 +69,7 @@ class RecommendedProduct extends Component
      * @param WP_Post $product
      * @return void
      */
-    public function __construct($product)
+    public function __construct($product, $imageHeight, $imageWidth)
     {   
         $this->permalink = get_the_permalink($product);
         $this->image_url = get_the_post_thumbnail_url($product);
@@ -65,6 +77,9 @@ class RecommendedProduct extends Component
         $this->excerpt = $this->getProductExcerpt($product);
         $this->price = $this->getProductPrice($product);
         $this->in_stock = $this->getProductStockQuantity($product);
+
+        $this->imageHeight = $imageHeight;
+        $this->imageWidth = $imageWidth;
     }
 
     /**

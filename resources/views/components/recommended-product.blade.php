@@ -1,6 +1,6 @@
 <div {{ $attributes->merge(['class' => 'flex flex-col text-left']) }}>
     <a href="{{ $permalink }}">
-        <img src="{{ $image_url }}" />
+        <img src="{{ $image_url }}" style="height: {{ $imageHeight }}px; width: {{ $imageWidth }}px;"/>
     </a>
     <div>
         <p class="text-sm text-gray-400 h-12">
@@ -14,7 +14,7 @@
     
         <span>Ревюта</span>
     
-        <p class="my-3">{{ $price }} лв.</p>
+        <p class="my-3 text-lg">{{ $price }} лв.</p>
             
         @if ($in_stock > 0 || !is_int($in_stock))
             <button class="h-12 bg-buy-button w-full items-center justify-center transition ease-in-out delay-50 hover:scale-110 duration-300">

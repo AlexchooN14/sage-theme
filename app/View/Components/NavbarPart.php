@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use Illuminate\Support\Arr;
 use Roots\Acorn\View\Component;
 
 class NavbarPart extends Component
@@ -31,6 +32,13 @@ class NavbarPart extends Component
     public $linkText;
 
     /**
+     * The Navbar Part is there dropdown.
+     * and what type is it
+     * @var string
+     */
+    public $dropdownAttributes;
+
+    /**
      * The icon types.
      *
      * @var array
@@ -40,20 +48,39 @@ class NavbarPart extends Component
         'flame' => 'fa-solid fa-fire-flame-curved pr-1 text-promo-500',
     ];
 
+    public $dropdownTypes = [
+        'products' => array(
+            'id' => 'products-dropdown-button',
+            'data-collapse-toggle' => 'products-dropdown',
+            'data-dropdown-placement' => 'bottom',
+            'component' => 'product-megamenu'            
+        ),
+        'solutions' => array(
+            'id' => 'solutions-dropdown-button',
+            'data-collapse-toggle' => 'solutions-dropdown',
+            'data-dropdown-placement' => 'bottom',
+            'component' => 'solution-megamenu'            
+        ),
+    ];
+
     /**
      * Create the component instance.
      *
-     * @param  string  $iconType
      * @param  string  $link
      * @param  string  $linkText
+     * @param  string  $iconType
+     * @param  string  $dropdown
      * @return void
      */
-    public function __construct($link, $linkText, $iconType = null)
+    public function __construct($link, $linkText, $iconType = null, $dropdownType = null)
     {
         $this->iconType = $iconType;
         $this->iconClass = ($iconType) ? $this->iconTypes[$iconType] : null;
         $this->link = $link;
-        $this->linkText = mb_strtoupper($linkText);
+        $this->linkText = mb_strtoupper($linkText);        
+        if ($dropdownType && array_key_exists($dropdownType, $this->dropdownTypes)) {
+            $this->dropdownAttributes = $this->dropdownTypes[$dropdownType];            
+        }
     }
 
     /**

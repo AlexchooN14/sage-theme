@@ -1163,6 +1163,11 @@
           "name": "Theme-pink",
           "slug": "theme-pink",
           "color": "#fccdce"
+        },
+        {
+          "name": "Dark-overlay",
+          "slug": "dark-overlay",
+          "color": "rgba(0, 0, 0, 0.6)"
         }
       ]
     },

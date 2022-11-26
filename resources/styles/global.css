@@ -1,0 +1,29 @@
+* {
+    font-family: "Casper Regular", sans-serif;
+    letter-spacing: .05rem;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #e8e8e8;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(26, 26, 26); 
+    border-radius: 10px;
+}
+
+::-moz-selection { /* Code for Firefox */
+    color: #222;
+    background: #feeff0;
+}
+
+::selection {
+    color: #222;
+    background: #feeff0;
+}

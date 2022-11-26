@@ -3,7 +3,7 @@
 namespace App\View\Composers;
 
 use Roots\Acorn\View\Composer;
-
+use WP_Query;
 class App extends Composer
 {
     /**
@@ -25,7 +25,35 @@ class App extends Composer
         return [
             'siteName' => $this->siteName(),
             'logo' => $this->getLogoUrl(),
+            'navbar_recommended_products' => $this->getRecommendedProducts(),
         ];
+    }
+
+    /**
+     * List of arguments for WP_Query recommended products.
+     * There should be more complex recommendation algorythm !!
+     * @var array
+     */
+    protected $recommended_products_args = array(
+        'post_type' => 'product',
+        'posts_per_page' => 2,
+        'date_query' => array(
+            '0' => array(
+                'year'  => 2022,
+                'month' => 11,
+                'day'   => 23,
+            ),
+        ),
+        'tax_query' => array( array(
+            'taxonomy' => 'product_visibility',
+            'field'    => 'name',
+            'terms'    => array('outofstock'),
+            'operator' => 'NOT IN'
+        ) ),
+    );
+
+    public function getRecommendedProducts() {
+        return array_reverse((new WP_Query($this->recommended_products_args))->posts);
     }
 
     /**

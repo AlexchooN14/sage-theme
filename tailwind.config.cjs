@@ -15,6 +15,7 @@ module.exports = {
         'newsletter-pink': '#ffc0cb',
         'newsletter-border': '#ffa4a5',
         'theme-pink': '#fccdce',
+        'dark-overlay': 'rgba(0, 0, 0, 0.6)',
       }, // Extend Tailwind's default colors
       spacing: {
         'dropdown-nav': '3.15rem',
@@ -22,6 +23,9 @@ module.exports = {
       padding: {
         '15': '60px',
         '18': '70px',
+      },
+      margin: {
+        '15': '60px',        
       },
       width: {
         '1/7': '14%',
