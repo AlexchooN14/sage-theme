@@ -1,4 +1,4 @@
-const megamenu_types = ['products', 'solutions'];
+const megamenu_types = ['products', 'solutions', 'blog'];
 var main_overlay = document.getElementById('main_overlay');
 
 megamenu_types.forEach( type => {

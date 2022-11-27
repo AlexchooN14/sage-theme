@@ -21,19 +21,17 @@
         </a>
       </div>      
 
-      <div id="mega-menu-full-cta">
         {{-- middle container --}}
-        <ul id="nav" class="text-sm flex flex-row items-center rounded-lg border-0 border border-gray-100 mt-0 bg-white">
-          
-          <x-navbar-part link="#" linkText="продукти" dropdownType="products" />
-          <x-navbar-part link="#" linkText="решение" dropdownType="solutions"/>
-          <x-navbar-part link="#" linkText="най - продавани" iconType="crown" />
-          <x-navbar-part link="#" linkText="ПРОМО ПРОДУКТИ" class="!text-promo-500" iconType="flame" />
-          <x-navbar-part link="#" linkText="КОНТАКТИ"/>
-          <x-navbar-part link="#" linkText="БЛОГ"/>    
-          
-        </ul>
-      </div>      
+      <ul id="nav" class="text-sm flex flex-row items-center rounded-lg border-0 border border-gray-100 mt-0 bg-white">
+        
+        <x-navbar-part link="#" linkText="продукти" dropdownType="products" />
+        <x-navbar-part link="#" linkText="решение" dropdownType="solutions"/>
+        <x-navbar-part link="#" linkText="най - продавани" iconType="crown" />
+        <x-navbar-part link="#" linkText="ПРОМО ПРОДУКТИ" class="!text-promo-500" iconType="flame" />
+        <x-navbar-part link="#" linkText="КОНТАКТИ"/>
+        <x-navbar-part link="#" linkText="БЛОГ" dropdownType="blog"/>
+        
+      </ul>    
 
 
       <div class="">

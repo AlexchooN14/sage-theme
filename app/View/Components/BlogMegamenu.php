@@ -4,7 +4,7 @@ namespace App\View\Components;
 
 use Roots\Acorn\View\Component;
 
-class ProductMegamenu extends Component
+class BlogMegamenu extends Component
 {
 
     /**
@@ -21,6 +21,6 @@ class ProductMegamenu extends Component
      */
     public function render()
     {
-        return $this->view('components.product-megamenu');
+        return $this->view('components.blog-megamenu');
     }
 }

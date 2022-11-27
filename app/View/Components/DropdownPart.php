@@ -19,16 +19,24 @@ class DropdownPart extends Component
     public $text;
 
     /**
+     * The <a> tag text size.
+     * @var string
+     */
+    public $textSize;
+
+    /**
      * Create the component instance.
      *
      * @param  string  $link
      * @param  string  $text
+     * @param  string  $textSize
      * @return void
      */
-    public function __construct($link, $text)
+    public function __construct($link, $text, $textSize = null)
     {
         $this->link = $link;
-        $this->text = $text;
+        $this->text = $text;            
+        $this->textSize = $textSize;
     }
 
     /**

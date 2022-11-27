@@ -2,7 +2,6 @@
 
 namespace App\View\Components;
 
-use Illuminate\Support\Arr;
 use Roots\Acorn\View\Component;
 
 class SolutionMegamenu extends Component

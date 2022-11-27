@@ -2,7 +2,6 @@
 
 namespace App\View\Components;
 
-use Illuminate\Support\Arr;
 use Roots\Acorn\View\Component;
 
 class NavbarPart extends Component
@@ -61,6 +60,12 @@ class NavbarPart extends Component
             'data-dropdown-placement' => 'bottom',
             'component' => 'solution-megamenu'            
         ),
+        'blog' => array(
+            'id' => 'blog-dropdown-button',
+            'data-collapse-toggle' => 'blog-dropdown',
+            'data-dropdown-placement' => 'bottom',
+            'component' => 'blog-megamenu'            
+        ),
     ];
 
     /**
@@ -80,7 +85,7 @@ class NavbarPart extends Component
         $this->linkText = mb_strtoupper($linkText);        
         if ($dropdownType && array_key_exists($dropdownType, $this->dropdownTypes)) {
             $this->dropdownAttributes = $this->dropdownTypes[$dropdownType];            
-        }
+        }        
     }
 
     /**

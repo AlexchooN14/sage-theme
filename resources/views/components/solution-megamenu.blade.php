@@ -4,19 +4,19 @@
             <div class="flex flex-col pb-10 justify-between">
               <div>
 
-                <x-dropdown-part link="#" text="Акне"/>
-                <x-dropdown-part link="#" text="Мазна кожа"/>
-                <x-dropdown-part link="#" text="Черни точки и разширени пори"/>
-                <x-dropdown-part link="#" text="Неравномерен тен"/>
-                <x-dropdown-part link="#" text="Пигментни петна"/>
-                <x-dropdown-part link="#" text="Хидратация"/>
-                <x-dropdown-part link="#" text="Суха и атопична кожа"/>
-                <x-dropdown-part link="#" text="Пърхот и косопад"/>
-                <x-dropdown-part link="#" text="Изпотяване"/>
-                <x-dropdown-part link="#" text="Белези"/>
-                <x-dropdown-part link="#" text="Чупливи нокти"/>
-                <x-dropdown-part link="#" text="Груба кожа и мазоли"/>
-                <x-dropdown-part link="#" text="Ухапвания от насекоми"/>
+                <x-dropdown-part link="#" text="Акне" textSize="text-megamenu-bigger"/>
+                <x-dropdown-part link="#" text="Мазна кожа" textSize="text-megamenu-bigger"/>
+                <x-dropdown-part link="#" text="Черни точки и разширени пори" textSize="text-megamenu-bigger"/>
+                <x-dropdown-part link="#" text="Неравномерен тен" textSize="text-megamenu-bigger"/>
+                <x-dropdown-part link="#" text="Пигментни петна" textSize="text-megamenu-bigger"/>
+                <x-dropdown-part link="#" text="Хидратация" textSize="text-megamenu-bigger"/>
+                <x-dropdown-part link="#" text="Суха и атопична кожа" textSize="text-megamenu-bigger"/>
+                <x-dropdown-part link="#" text="Пърхот и косопад" textSize="text-megamenu-bigger"/>
+                <x-dropdown-part link="#" text="Изпотяване" textSize="text-megamenu-bigger"/>
+                <x-dropdown-part link="#" text="Белези" textSize="text-megamenu-bigger"/>
+                <x-dropdown-part link="#" text="Чупливи нокти" textSize="text-megamenu-bigger"/>
+                <x-dropdown-part link="#" text="Груба кожа и мазоли" textSize="text-megamenu-bigger"/>
+                <x-dropdown-part link="#" text="Ухапвания от насекоми" textSize="text-megamenu-bigger"/>
               </div>
 
               <button class="h-12 bg-buy-button items-center justify-center transition ease-in-out delay-50 hover:scale-110 duration-300">

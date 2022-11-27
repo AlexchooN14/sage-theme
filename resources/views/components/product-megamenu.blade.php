@@ -4,18 +4,18 @@
             <div class="flex flex-col pb-10 justify-between">
               <div>
                 
-                <x-dropdown-part link="#" text="Acne Out"/>
-                <x-dropdown-part link="#" text="Pure Skin"/>
-                <x-dropdown-part link="#" text="Atopity"/>
-                <x-dropdown-part link="#" text="Melabel"/>
-                <x-dropdown-part link="#" text="Sebomax"/>
-                <x-dropdown-part link="#" text="Odorex"/>
-                <x-dropdown-part link="#" text="Keratolin Body"/>
-                <x-dropdown-part link="#" text="Keratolin Foot"/>
-                <x-dropdown-part link="#" text="Keratolin Hands & Maxi"/>
-                <x-dropdown-part link="#" text="Scarex"/>
-                <x-dropdown-part link="#" text="Calmax & Repelex"/>
-                <x-dropdown-part link="#" text="Мини продукти"/>
+                <x-dropdown-part link="#" text="Acne Out" textSize="text-megamenu-bigger"/>
+                <x-dropdown-part link="#" text="Pure Skin" textSize="text-megamenu-bigger"/>
+                <x-dropdown-part link="#" text="Atopity" textSize="text-megamenu-bigger"/>
+                <x-dropdown-part link="#" text="Melabel" textSize="text-megamenu-bigger"/>
+                <x-dropdown-part link="#" text="Sebomax" textSize="text-megamenu-bigger"/>
+                <x-dropdown-part link="#" text="Odorex" textSize="text-megamenu-bigger"/>
+                <x-dropdown-part link="#" text="Keratolin Body" textSize="text-megamenu-bigger"/>
+                <x-dropdown-part link="#" text="Keratolin Foot" textSize="text-megamenu-bigger"/>
+                <x-dropdown-part link="#" text="Keratolin Hands & Maxi" textSize="text-megamenu-bigger"/>
+                <x-dropdown-part link="#" text="Scarex" textSize="text-megamenu-bigger"/>
+                <x-dropdown-part link="#" text="Calmax & Repelex" textSize="text-megamenu-bigger"/>
+                <x-dropdown-part link="#" text="Мини продукти" textSize="text-megamenu-bigger"/>
               </div>
 
               <button class="h-12 bg-buy-button items-center justify-center transition ease-in-out delay-50 hover:scale-110 duration-300">
