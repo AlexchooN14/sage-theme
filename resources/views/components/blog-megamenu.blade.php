@@ -1,5 +1,5 @@
 <div id="blog-dropdown" class="absolute hidden top-[108px] border-t border-gray-100 z-10 px-24 fixed w-full left-0 right-0 py-7 bg-white">
-    <div class="ml-[12%]">
+    <div id="blog-left-wrapper">
         <div class="flex flex-row">
             <div class="flex flex-col pb-10 mr-10 last:mr-0 w-1/6">
                 <p class='text-sm py-1 hover-underline-animation border-b border-gray-300 font-bold mb-4 -bottom-0.5'>
