@@ -84,9 +84,9 @@
 
         <div name="quantity-input" class="w-1/7 bg-gray-100 flex flex-row">
           {{-- quantity part --}}
-          <input name="quantity" type="number" class="text-sm ml-1 w-2/3 bg-gray-100 outline-0 border-none pointer-events-none" min="1" value="1">
+          <input name="quantity" type="number" class="text-sm ml-4 w-2/3 bg-gray-100 outline-0 border-none pointer-events-none" min="1" value="1">
           {{-- quantity number --}}
-          <div class=" flex flex-col w-auto">
+          <div class=" flex flex-col w-auto mr-2">
             <button class="" onclick="this.parentNode.parentNode.querySelector('input[type=number]').stepUp()">
               <i class="fa-solid fa-plus text-[9px] font-light"></i>
             </button>

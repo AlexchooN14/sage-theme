@@ -1,7 +1,7 @@
 {{-- Related Blogposts --}}
-<div {{ $attributes->merge(['class' => 'flex flex-col']) }}>
+<div {{ $attributes->merge(['class' => 'flex flex-col blogpost-wrapper']) }}>
     {{-- image --}}
-    <img src="{{ $imageUrl }}" class="mb-6">
+    <img src="{{ $imageUrl }}" class="mb-6 blogpost-image">
     {{-- meta --}}
     <div class="flex flex-row justify-center align-center mb-3">
         <div class="flex flex-column w-1/2 top-1/2">
@@ -18,4 +18,9 @@
     {{-- read more --}}
     <a href="{{ $link }}" class="text-buy-button text-left text-sm font-medium">ПРОЧЕТИ</a>
 </div>
-  
+
+<style>
+    .blogpost-wrapper:hover > .blogpost-image {
+        opacity: 0.5;
+    }
+</style>

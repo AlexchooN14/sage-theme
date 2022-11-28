@@ -1,5 +1,5 @@
-<link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
-<script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+{{-- <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
+<script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script> --}}
 {{-- <header class="banner">
   @if (has_nav_menu('primary_navigation'))
     <nav class="nav-primary" aria-label="{{ wp_get_nav_menu_name('primary_navigation') }}">
@@ -7,6 +7,7 @@
     </nav>
   @endif
 </header> --}}
+<x-scroll-top-button />
 
 <div id="main_overlay" class=""></div>
 <div class="sticky top-8 z-10">
@@ -16,15 +17,15 @@
       <div class="flex flex-none items-center">
         <a href="{{ home_url('/') }}">
           @if(has_custom_logo())
-            <img src="{{ esc_url( $logo[0] ) }}" class="mr-3 h-6 sm:h-9" alt="{!! $siteName !!}">        
+            <img src="{{ esc_url( $logo[0] ) }}" alt="{!! $siteName !!}">        
           @endif
         </a>
       </div>      
 
         {{-- middle container --}}
-      <ul id="nav" class="text-sm flex flex-row items-center rounded-lg border-0 border border-gray-100 mt-0 bg-white">
+      <ul id="nav" class="text-megamenu-small ml-5 flex flex-row items-center rounded-lg border-0 border border-gray-100 mt-0 bg-white">
         
-        <x-navbar-part link="#" linkText="продукти" dropdownType="products" />
+        <x-navbar-part link="#" linkText="продукти" dropdownType="products"/>
         <x-navbar-part link="#" linkText="решение" dropdownType="solutions"/>
         <x-navbar-part link="#" linkText="най - продавани" iconType="crown" />
         <x-navbar-part link="#" linkText="ПРОМО ПРОДУКТИ" class="!text-promo-500" iconType="flame" />

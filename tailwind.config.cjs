@@ -3,10 +3,6 @@
 module.exports = {
   content: ["./index.php", "./app/**/*.php", "./resources/**/*.{php,vue,js}"],
   theme: {
-    fontSize: {
-      'megamenu-small': '13px',
-      'megamenu-bigger': '13.5px',
-    },
     extend: {
       colors: {
         promo: {
@@ -40,6 +36,10 @@ module.exports = {
         '6/7': '86%',
       },
 
+      fontSize: {
+        'megamenu-small': '13px',
+        'megamenu-bigger': '13.5px',
+      },
       
     },
     screens: {

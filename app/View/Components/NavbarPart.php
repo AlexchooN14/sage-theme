@@ -43,8 +43,8 @@ class NavbarPart extends Component
      * @var array
      */
     public $iconTypes = [
-        'crown' => 'fa-solid fa-crown pr-1 text-crown-500',
-        'flame' => 'fa-solid fa-fire-flame-curved pr-1 text-promo-500',
+        'crown' => 'fa-solid fa-crown pr-1 text-crown-500 text-megamenu-small',
+        'flame' => 'fa-solid fa-fire-flame-curved pr-1 text-promo-500 text-megamenu-small',
     ];
 
     public $dropdownTypes = [
