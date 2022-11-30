@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use InvalidArgumentException;
 use Roots\Acorn\View\Component;
 
 class NavbarPart extends Component
@@ -47,26 +48,31 @@ class NavbarPart extends Component
         'flame' => 'fa-solid fa-fire-flame-curved pr-1 text-promo-500 text-megamenu-small',
     ];
 
-    public $dropdownTypes = [
-        'products' => array(
-            'id' => 'products-dropdown-button',
-            'data-collapse-toggle' => 'products-dropdown',
-            'data-dropdown-placement' => 'bottom',
-            'component' => 'product-megamenu'            
-        ),
-        'solutions' => array(
-            'id' => 'solutions-dropdown-button',
-            'data-collapse-toggle' => 'solutions-dropdown',
-            'data-dropdown-placement' => 'bottom',
-            'component' => 'solution-megamenu'            
-        ),
-        'blog' => array(
-            'id' => 'blog-dropdown-button',
-            'data-collapse-toggle' => 'blog-dropdown',
-            'data-dropdown-placement' => 'bottom',
-            'component' => 'blog-megamenu'            
-        ),
-    ];
+    /**
+     * The navbar megamenu id.
+     *
+     * @var string
+     */
+    public $megamenuId;
+
+    /**
+     * The navbar megamenu type.
+     *
+     * @var string
+     */
+    public $megamenuType;
+
+    /**
+     * The Megamenu All Types - Provided by App composer
+     * @var array
+     */
+    public $megamenuTypes;
+
+    /**
+     * The Megamenu All Attributes - Provede by App composer
+     * @var array
+     */
+    public $megamenuAttributes;
 
     /**
      * Create the component instance.
@@ -77,15 +83,23 @@ class NavbarPart extends Component
      * @param  string  $dropdown
      * @return void
      */
-    public function __construct($link, $linkText, $iconType = null, $dropdownType = null)
+    public function __construct($link, $linkText, $iconType = null, $megamenuType=null, $megamenuTypes=null, $megamenuAttributes=null)
     {
         $this->iconType = $iconType;
         $this->iconClass = ($iconType) ? $this->iconTypes[$iconType] : null;
         $this->link = $link;
-        $this->linkText = mb_strtoupper($linkText);        
-        if ($dropdownType && array_key_exists($dropdownType, $this->dropdownTypes)) {
-            $this->dropdownAttributes = $this->dropdownTypes[$dropdownType];            
-        }        
+        $this->linkText = mb_strtoupper($linkText);
+        if ($megamenuType) {
+            if (in_array($megamenuType, $megamenuTypes)) {
+                $this->megamenuType = $megamenuType;
+                $this->megamenuTypes = $megamenuTypes;
+                $this->megamenuAttributes = $megamenuAttributes;
+                $this->megamenuId = $megamenuAttributes[$megamenuType]['id'];
+                $this->dropdownParts = $megamenuAttributes[$megamenuType]['dropdown_parts'];
+            } else {
+                throw new InvalidArgumentException($megamenuType." is not a valid Megamenu Type");
+            }
+        }
     }
 
     /**
