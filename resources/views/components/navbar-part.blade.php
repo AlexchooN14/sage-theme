@@ -1,9 +1,14 @@
-<li {{ $attributes->merge(['class' => 'mx-5 py-7 text-gray-700 items-center']) }}
-    
-    @if($megamenuType)
-        id='{{ $megamenuId }}-dropdown-button' data-collapse-toggle='{{ $megamenuId }}-dropdown'
-        data-dropdown-placement='bottom'
-    @endif>
+<li {{ $attributes->merge(['class' => 'mx-5 py-7 text-gray-700 items-center']) }}    
+    @if ($megamenuType)
+        @if (in_array($megamenuType, $megamenuTypes))
+            @php ($megamenuId = $megamenuAttributes[$megamenuType]['id'])
+            id='{{ $megamenuId }}-dropdown-button' data-collapse-toggle='{{ $megamenuId }}-dropdown'
+            data-dropdown-placement='bottom'
+        @else
+            @php (throw new InvalidArgumentException($megamenuType." is not a valid Megamenu Type"))
+        @endif
+    @endif
+    >
 
     @if($iconType)
         <div class='flex flex-row items-center'>               
@@ -18,7 +23,7 @@
         @if($megamenuType == 'blog')
             <x-blog-megamenu />
         @else
-            <x-megamenu :megamenuType='$megamenuType', :megamenuTypes='$megamenuTypes', :megamenuAttributes='$megamenuAttributes' />
+            <x-megamenu :megamenuType='$megamenuType' :megamenuTypes='$megamenuTypes' :megamenuAttributes='$megamenuAttributes' />
         @endif
     @endif
 

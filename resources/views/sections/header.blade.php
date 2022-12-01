@@ -25,12 +25,12 @@
         {{-- middle container --}}
       <ul id="nav" class="text-megamenu-small ml-5 flex flex-row items-center rounded-lg border-0 border border-gray-100 mt-0 bg-white">
         {{-- $link, $linkText, $iconType = null, $megamenuType=null, $megamenuTypes=null, $megamenuAttributes=null --}}
-        <x-navbar-part link="#" linkText="продукти" megamenuType="products" :megamenuTypes='$megamenuTypes' :megamenuAttributes="$megamenuAttributes"/>
-        <x-navbar-part link="#" linkText="решение" megamenuType="solutions" :megamenuTypes='$megamenuTypes' :megamenuAttributes="$megamenuAttributes"/>
+        <x-navbar-part link="#" linkText="продукти" megamenuType="products"/> {{--  :megamenuTypes='$megamenuTypes' :megamenuAttributes="$megamenuAttributes" --}}
+        <x-navbar-part link="#" linkText="решение" megamenuType="solutions"/> {{--  :megamenuTypes='$megamenuTypes' :megamenuAttributes="$megamenuAttributes" --}}
         <x-navbar-part link="#" linkText="най - продавани" iconType="crown" />
         <x-navbar-part link="#" linkText="ПРОМО ПРОДУКТИ" class="!text-promo-500" iconType="flame" />
         <x-navbar-part link="#" linkText="КОНТАКТИ"/>
-        <x-navbar-part link="#" linkText="БЛОГ" megamenuType="blog" :megamenuTypes='$megamenuTypes' :megamenuAttributes="$megamenuAttributes"/>
+        <x-navbar-part link="#" linkText="БЛОГ" megamenuType="blog"/> {{-- :megamenuTypes='$megamenuTypes' :megamenuAttributes="$megamenuAttributes" --}}
         
       </ul>    
 

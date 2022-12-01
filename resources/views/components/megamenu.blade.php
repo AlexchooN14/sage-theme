@@ -15,6 +15,7 @@
                 <x-dropdown-part link="#" text="Scarex" textSize="text-megamenu-bigger"/>
                 <x-dropdown-part link="#" text="Calmax & Repelex" textSize="text-megamenu-bigger"/>
                 <x-dropdown-part link="#" text="Мини продукти" textSize="text-megamenu-bigger"/> --}}
+                
                 @foreach($dropdownParts as $dropdownPart)
                     <x-dropdown-part link="{{ $dropdownPart['link'] }}" text="{{ $dropdownPart['text'] }}" textSize="{{ $dropdownPart['textSize'] }}"/>
                 @endforeach

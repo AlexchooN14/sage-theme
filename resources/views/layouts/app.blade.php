@@ -3,7 +3,6 @@
 </a>
 
 @include('sections.header')
-{{-- @dump($megamenuAttributes) --}}
 <main id="main" class="main">
   @yield('content')
 </main>

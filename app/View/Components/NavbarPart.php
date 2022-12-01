@@ -63,43 +63,21 @@ class NavbarPart extends Component
     public $megamenuType;
 
     /**
-     * The Megamenu All Types - Provided by App composer
-     * @var array
-     */
-    public $megamenuTypes;
-
-    /**
-     * The Megamenu All Attributes - Provede by App composer
-     * @var array
-     */
-    public $megamenuAttributes;
-
-    /**
      * Create the component instance.
      *
      * @param  string  $link
      * @param  string  $linkText
      * @param  string  $iconType
-     * @param  string  $dropdown
+     * @param  string  $megamenuType
      * @return void
      */
-    public function __construct($link, $linkText, $iconType = null, $megamenuType=null, $megamenuTypes=null, $megamenuAttributes=null)
+    public function __construct($link, $linkText, $iconType = null, $megamenuType=null)
     {
         $this->iconType = $iconType;
         $this->iconClass = ($iconType) ? $this->iconTypes[$iconType] : null;
         $this->link = $link;
         $this->linkText = mb_strtoupper($linkText);
-        if ($megamenuType) {
-            if (in_array($megamenuType, $megamenuTypes)) {
-                $this->megamenuType = $megamenuType;
-                $this->megamenuTypes = $megamenuTypes;
-                $this->megamenuAttributes = $megamenuAttributes;
-                $this->megamenuId = $megamenuAttributes[$megamenuType]['id'];
-                $this->dropdownParts = $megamenuAttributes[$megamenuType]['dropdown_parts'];
-            } else {
-                throw new InvalidArgumentException($megamenuType." is not a valid Megamenu Type");
-            }
-        }
+        $this->megamenuType = $megamenuType;
     }
 
     /**

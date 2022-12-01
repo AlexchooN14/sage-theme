@@ -8,12 +8,6 @@ use Roots\Acorn\View\Component;
 class Megamenu extends Component
 {
     /**
-     * The Megamenu Attributes
-     * @var array
-     */
-    public $megamenuAttributes;
-
-    /**
      * The Megamenu Id
      * @var string
      */
@@ -28,12 +22,14 @@ class Megamenu extends Component
     /**
      * Create the component instance.
      *
+     * @param  string  $megamenuType
+     * @param  array  $megamenuTypes
+     * @param  array  $megamenuAttributes
      * @return void
      */
-    public function __construct($megamenuType, $megamenuTypes /* Подаваме типовете менюта от App composer-a */, $megamenuAttributes /* Подаваме атрибутите от App composer-a */) {
+    public function __construct($megamenuType, $megamenuTypes, $megamenuAttributes) {
+        
         if (in_array($megamenuType, $megamenuTypes)) {
-            $this->megamenuAttributes = $megamenuAttributes[$megamenuType];
-            
             $this->id = $megamenuAttributes[$megamenuType]['id'];
             $this->dropdownParts = $megamenuAttributes[$megamenuType]['dropdown_parts'];
             // array(
